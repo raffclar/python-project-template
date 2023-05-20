@@ -13,13 +13,13 @@ jobs:
     name: format
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/workflow-2.yml
+      - uses: ./.github/workflows/setup.yml
       - name: Run black
         run: python3.8 -m black .
   lint:
     name: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/workflow-2.yml
+      - uses: ./.github/workflows/setup.yml
       - name: Run flake8
         run: python3.8 -m flake8 .
