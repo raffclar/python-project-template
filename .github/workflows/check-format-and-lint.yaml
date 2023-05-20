@@ -10,6 +10,10 @@ on:
       - '**/poetry.lock'
       - '**/requirements.txt'
       - '**.requirements.in'
+  push:
+    branches:
+      - master
+      - main
 jobs:
   linting:
     runs-on: ubuntu-latest
