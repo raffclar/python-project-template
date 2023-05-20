@@ -8,11 +8,20 @@ packages = [{include = "python_project_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
 black = "^23.3.0"
 flake8 = "^6.0.0"
+pyproject-flake8 = "^6.0.0.post1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = 'black'
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203"]
