@@ -57,7 +57,7 @@ jobs:
       - name: Install library
         run: |
           poetry lock --check
-          poetry install --with dev --no-interaction
+          poetry install --with dev --no-root --no-interaction
       #----------------------------------------------
       #          install and run linters
       #----------------------------------------------
@@ -107,14 +107,9 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-      #----------------------------------------------
-      # Install your root project, if required
-      #----------------------------------------------
-      - name: Install library
         run: |
           poetry lock --check
-          poetry install --no-interaction
+          poetry install --no-interaction --no-root
       #----------------------------------------------
       # Add matrix specifics and run test suite
       #----------------------------------------------
