@@ -1,5 +1,4 @@
 name: backend-lint-and-test
-description: Check for formatting and linting issues
 on:
   pull_request:
     branches:
