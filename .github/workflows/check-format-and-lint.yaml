@@ -1,0 +1,29 @@
+name: backend-lint-and-test
+description: Check for formatting and linting issues
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - '**.py'
+      - '**/pyproject.toml'
+      - '**/poetry.lock'
+jobs:
+  setup:
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+  format:
+    name: format
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - python -m pip install flake8
+      - python3.8 -m flake8 .
+  lint:
+    name: lint
+    needs: setup
+    runs-on: ubuntu-latest
