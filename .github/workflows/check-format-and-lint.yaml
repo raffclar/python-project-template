@@ -62,7 +62,6 @@ jobs:
       #----------------------------------------------
       - name: Lint
         run: |
-          ls -la
           source .venv/bin/activate
           flake8 .
           black . --check
