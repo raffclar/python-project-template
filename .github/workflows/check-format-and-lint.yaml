@@ -119,3 +119,12 @@ jobs:
           source .venv/bin/activate
           python -m unittest
           coverage report
+      #----------------------------------------------
+      # Upload coverage stats
+      #----------------------------------------------
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }
+          file: ./coverage.xml
+          fail_ci_if_error: true
