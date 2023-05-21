@@ -16,6 +16,10 @@ on:
       - main
 jobs:
   linting:
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest" ]
+        python-version: [ "3.11" ]
     runs-on: ubuntu-latest
     steps:
       #----------------------------------------------
