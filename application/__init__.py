@@ -1,2 +1,2 @@
-def main():
-    print("hello")
+def main() -> bool:
+    return True
