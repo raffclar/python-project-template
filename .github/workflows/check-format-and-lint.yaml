@@ -18,7 +18,7 @@ jobs:
   linting:
     strategy:
       matrix:
-        os: [ "ubuntu-latest" ]
+        os: [ "buildjet-4vcpu-ubuntu-2204" ]
         python-version: [ "3.11" ]
     runs-on: ${{ matrix.os }}
     steps:
